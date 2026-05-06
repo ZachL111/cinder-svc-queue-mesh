@@ -1,0 +1,73 @@
+{
+  "repo": "cinder-svc-queue-mesh",
+  "language": "Kotlin",
+  "category": "Backend services",
+  "goal": "Design a Kotlin verification harness for queue systems, covering storage recovery, log and snapshot fixtures, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "queue pressure",
+      "retry load",
+      "worker slack",
+      "session drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "queue pressure",
+      "signal": 52,
+      "slack": 49,
+      "drag": 12,
+      "confidence": 84,
+      "score": 201,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "retry load",
+      "signal": 75,
+      "slack": 34,
+      "drag": 12,
+      "confidence": 54,
+      "score": 202,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "worker slack",
+      "signal": 75,
+      "slack": 53,
+      "drag": 10,
+      "confidence": 72,
+      "score": 245,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "session drift",
+      "signal": 62,
+      "slack": 28,
+      "drag": 16,
+      "confidence": 64,
+      "score": 168,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "queue pressure",
+      "signal": 84,
+      "slack": 20,
+      "drag": 20,
+      "confidence": 62,
+      "score": 190,
+      "lane": "ship"
+    }
+  ]
+}
