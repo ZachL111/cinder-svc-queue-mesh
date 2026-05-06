@@ -1,0 +1,17 @@
+{
+  "repo": "cinder-svc-queue-mesh",
+  "thresholds": {
+    "signal": 4,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 3,
+    "ship": 155,
+    "watch": 98
+  },
+  "terms": [
+    "queue pressure",
+    "retry load",
+    "worker slack",
+    "session drift"
+  ]
+}
